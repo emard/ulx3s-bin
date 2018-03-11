@@ -25,13 +25,13 @@ Start websvf in open AP mode:
 Unplug USB, while keeping BTN0 pressed, plug USB. After blue LED
 blinks once (lit for 0.5 seconds), release BTN0.
 
-Connect to the AP (SSID:websvf), with firefox browser open page
-192.168.4.1 and from there SVF files can be uploaded directly to FPGA.
+Web opration without SD: Connect to the AP (SSID:websvf), with firefox browser 
+open page 192.168.4.1 and from there SVF files can be uploaded directly to FPGA.
 
-Place a SD card, FAT32 formatted with first partiton max 4GB, and
-with web interface content of SD card be managed, directory listed,
-files uploaded and deleted, and SVF programmed to FPGA on a mouse click.
+Web operation with SD: Place a SD card, FAT32 formatted with first partiton max 4GB. and
+Content of SD card can be managed using web interface from page 192.168.4.1. 
+Directories can be browsed, files uploaded and deleted, SVF files programmed to FPGA.
 
-Connect OLED SSD1331 and press and hold BTN0 for 2 seconds, a directory
-content will be displayed on OLED. Files can be browsed and SVF uploaded 
-on board standalone, using OLED and onboard buttons.
+Standalone operation: connect OLED SSD1331 and press and hold BTN0 
+for 2 seconds, a directory content will be shown on OLED. Files can
+be browsed and SVF uploaded using OLED and onboard buttons.
