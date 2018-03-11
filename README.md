@@ -1,7 +1,7 @@
 # ULX3S binaries
 
 A collection of functional binary files and uploaders
-to quickstart with ULX3S. Tested on Debian Linux.
+to quickstart with ULX3S. Works from Debian Linux.
 
 Set ftdi usbserial name
 
