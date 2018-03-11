@@ -12,7 +12,7 @@ Set ftdi usbserial name
 Re-plug USB, device will appear with above name.
 Upload pass-thru bitstream to FPGA config flash
 
-    FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
+    usb-jtag/linux/FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
 
 Re-plug USB, some LEDs will be lit by passthru bitstream.
 Upload ESP32 websvf application and SPI filesystem to ESP32
