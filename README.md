@@ -10,6 +10,29 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --product "ULX3S FPGA 45K v1.7"
 
 Re-plug USB, device will appear with above name.
+Upload f32c CPU
+
+    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-85k-vector/f32c-ulx3s-85k-vector-flash.vme
+
+Re-plug USB. If HDMI monitor is connected, a color test screen 640x480 should appear.
+Upload self-test binary executable
+
+    fpga/f32c/f32cup.py fpga/f32c/f32c-bin/selftest1.bin
+
+ULX3S should blink LEDs and print test results on usbserial 115200,8,N,1 and monitor.
+RTC clock should advance. CRC OK should be displayed if monitor is connected.
+ADC readings 1000 and 1FFF should alternate.
+Holding pushbuttons and changing DIP switches should change value at BTN and SW.
+
+    2018-01-01 00:12:16 ALM *-01 00:00:00
+    EDID EEPROM:128 CRC=00 OK
+    0000 1000 2000 3000 4000 5000 6000 7000
+    BTN:_______ SW:1234 LED:_6543210
+    2018-01-01 00:12:19 ALM *-01 00:00:00
+    EDID EEPROM:128 CRC=00 OK
+    0000 1ff0 2000 3ff0 4000 5ff0 6000 7ff0
+    BTN:_______ SW:1234 LED:76543210
+
 Upload pass-thru bitstream to FPGA config flash
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
