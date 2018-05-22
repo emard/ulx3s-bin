@@ -2,6 +2,8 @@
 
 A collection of functional binary files and uploaders
 to quickstart with ULX3S. Works from Debian Linux.
+Connect USB PC port with micro-USB cable to US1 port of ULX3S.
+Green LED D18 should turn ON.
 
 Set ftdi usbserial name
 
@@ -10,11 +12,12 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --product "ULX3S FPGA 45K v1.7"
 
 Re-plug USB, device will appear with above name.
-Upload f32c CPU for 45F chip:
+Upload f32c CPU to FLASH for boards with 45F chip.
+Upload is slow, takes about 15 minutes
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector/f32c-ulx3s-45k-vector-flash.vme
 
-for 85F chip:
+for boards with 85F chip:
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-85k-vector/f32c-ulx3s-85k-vector-flash.vme
 
