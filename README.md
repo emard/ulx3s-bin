@@ -36,14 +36,16 @@ ADC readings 1000 and 1FFF should alternate.
 Holding pushbuttons and changing DIP switches should change value at BTN and SW.
 It should look like this
 
-    2018-01-01 00:12:16 ALM *-01 00:00:00
+    2018-01-01 00:02:49  OK  *-01 00:00:00
     EDID EEPROM:128 CRC=00 OK
-    0000 1000 2000 3000 4000 5000 6000 7000
-    BTN:_______ SW:1234 LED:_6543210
-    2018-01-01 00:12:19 ALM *-01 00:00:00
+    0000 1000 2000 3000 4000 5000 6020 7000
+    ADC:  OK        OK        OK        OK 
+    BTN:_______ SW:1234 LED:7654321_
+    2018-01-01 00:02:51  OK  *-01 00:00:00
     EDID EEPROM:128 CRC=00 OK
     0000 1ff0 2000 3ff0 4000 5ff0 6000 7ff0
-    BTN:_______ SW:1234 LED:76543210
+    ADC:  OK        OK        OK        OK 
+    BTN:_______ SW:1234 LED:765432__
 
 Upload pass-thru bitstream to FPGA config flash
 
