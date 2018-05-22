@@ -13,7 +13,7 @@ Set ftdi usbserial name
 
 Re-plug USB, device will appear with above name.
 Upload f32c CPU to FLASH for boards with 45F chip.
-Upload is slow, takes about 15 minutes
+Upload is slow, may run for 15 minutes
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector/f32c-ulx3s-45k-vector-flash.vme
 
