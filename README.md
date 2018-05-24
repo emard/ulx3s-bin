@@ -15,11 +15,11 @@ Re-plug USB, device will appear with above name.
 Upload f32c CPU to FLASH for boards with 45F chip.
 Upload is slow, may run for 15 minutes
 
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector/f32c-ulx3s-45k-vector-flash.vme
+    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector/f32c-ulx3s-45k-vector-selftest-flash.vme
 
 for boards with 85F chip:
 
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-85k-vector/f32c-ulx3s-85k-vector-flash.vme
+    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-85k-vector/f32c-ulx3s-85k-vector-selftest-flash.vme
 
 Re-plug USB. If HDMI monitor is connected, a color test screen 640x480 should appear.
 Upload self-test binary executable
@@ -36,18 +36,21 @@ ADC readings should alternate from 1000 to 1FF0.
 Holding pushbuttons and changing DIP switches should change value at BTN and SW.
 It should look like this
 
-    2018-01-01 00:02:49  OK  *-01 00:00:00
+    2018-01-01 00:10:31  OK  *-01 00:00:00
     EDID EEPROM:128 CRC=00 OK
-    0000 1000 2000 3000 4000 5000 6020 7000
-    ADC:  OK        OK        OK        OK 
-    BTN:_______ SW:1234 LED:7654321_
-    2018-01-01 00:02:51  OK  *-01 00:00:00
+    0ff0 1000 2ff0 3000 4ff0 5000 6ff0 7000
+     OK   OK   OK   OK   OK   OK   OK   OK 
+    DAC: L3210  OK  R3210  OK  V3210  OK 
+    BTN:_12____ SW:1234 LED:___4___0
+    2018-01-01 00:10:33  OK  *-01 00:00:00
     EDID EEPROM:128 CRC=00 OK
     0000 1ff0 2000 3ff0 4000 5ff0 6000 7ff0
-    ADC:  OK        OK        OK        OK 
-    BTN:_______ SW:1234 LED:765432__
+     OK   OK   OK   OK   OK   OK   OK   OK 
+    DAC: L3210  OK  R3210  OK  V3210  OK 
+    BTN:___34__ SW:1234 LED:__5___1_
 
-Upload pass-thru bitstream to FPGA config flash
+If above self test looks good, board is useable.
+upload pass-thru bitstream to FPGA config flash
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
 
