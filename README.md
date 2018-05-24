@@ -35,7 +35,7 @@ Upload progess will be printed
     ADDR 0x80004010 LEN 6124 CRC 0xC922F84A OK
     JUMP 0x80000000
 
-ULX3S should blink LEDs and print test results on usbserial 115200,8,N,1 and monitor.
+ULX3S should blink LEDs and print test results on usbserial 115200,8,N,1
 
     stty sane 115200 < /dev/ttyUSB0
     cat /dev/ttyUSB0
@@ -58,6 +58,7 @@ It should look like this
     DAC: L3210  OK  R3210  OK  V3210  OK 
     BTN:___34__ SW:1234 LED:__5___1_
 
+Same content as printed on usbserial should also be shown on HDMI monitor.
 If above self test looks good, board is useable.
 upload pass-thru bitstream to FPGA config flash
 
