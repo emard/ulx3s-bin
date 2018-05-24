@@ -26,6 +26,15 @@ Upload self-test binary executable
 
     fpga/f32c/f32cup.py fpga/f32c/f32c-bin/selftest1.bin
 
+Upload progess will be printed
+
+    f32c python uploader (under construction)
+    MIPS Little-Endian header received
+    ADDR 0x80000000 LEN 8208 CRC 0xF17DE856 OK
+    ADDR 0x80002010 LEN 8192 CRC 0x58788D1D OK
+    ADDR 0x80004010 LEN 6124 CRC 0xC922F84A OK
+    JUMP 0x80000000
+
 ULX3S should blink LEDs and print test results on usbserial 115200,8,N,1 and monitor.
 
     stty sane 115200 < /dev/ttyUSB0
