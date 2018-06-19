@@ -3,7 +3,8 @@
 A collection of functional binary files and uploaders
 to quickstart with ULX3S. Works from Debian Linux.
 Connect USB PC port with micro-USB cable to US1 port of ULX3S.
-Green LED D18 should turn ON.
+FT231X in factory default state should turn ON Green LED D18
+when connected to PC.
 
 Set ftdi usbserial name
 
