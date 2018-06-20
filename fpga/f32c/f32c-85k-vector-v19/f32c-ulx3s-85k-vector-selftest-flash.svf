@@ -1,6 +1,6 @@
 
-! Device: LFE5U-85F: SPI-M25P32  SPI Flash Erase,Program,Verify project/project_project.mcs
-! LATTICE_NOTE "Device" "SPI-M25P32"
+! Device: LFE5U-85F: SPI-M25P128  SPI Flash Erase,Program,Verify project/project_project.mcs
+! LATTICE_NOTE "Device" "SPI-M25P128"
 ! SVF Revision D Format
 STATE RESET ;
 HDR	0 ;
@@ -20,9 +20,10 @@ SIR 8 TDI(3A) ;
 SDR 16 TDI(68FE) ;
 RUNTEST IDLE	32 TCK	2.00E-002 SEC ;
 // IDCode Checking...
-SDR 40 TDI(00000000D5)
-		TDO(A8FFFFFFFF)
-		MASK(FF00000000) ;
+SDR 8 TDI(D5) ;
+SDR 32 TDI(000000F9)
+		TDO(A8FFFFFF)
+		MASK(FF000000) ;
 // Enabling...
 SDR 8 TDI(60) ;
 // Erasing...
