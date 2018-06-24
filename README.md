@@ -77,9 +77,14 @@ Upload ESP32 websvf application and SPI filesystem to ESP32
     ./upload-executable.sh
     ./upload-spiffs.sh
 
+If upload fails with error or doesn't progress, press Ctrl-C and
+retry until it succeeds with:
+
+    Hash of data verified.
+
 Start websvf in open AP mode:
 Unplug USB, while keeping BTN0 pressed, plug USB. After blue LED
-blinks once (lit for 0.5 seconds), release BTN0.
+blinks once (lit for 0.5 seconds), quickly release BTN0.
 
 Web opration without SD: Connect to the AP (SSID:websvf). Open web browser
 "firefox", open page http://192.168.4.1 and from there SVF files can be uploaded
