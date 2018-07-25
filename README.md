@@ -11,6 +11,7 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --max-bus-power 500
     usb-jtag/linux/ftx_prog --manufacturer "FER-RADIONA-EMARD"
     usb-jtag/linux/ftx_prog --product "ULX3S FPGA 45K v1.7"
+    usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device will appear with above name.
 Upload f32c CPU to FLASH for boards with 45F chip.
@@ -97,3 +98,17 @@ files uploaded and deleted, SVF files programmed to FPGA.
 Standalone operation: connect OLED SSD1331 and press and hold BTN0 
 for 2 seconds, a directory content will be shown on OLED. Files can
 be browsed and SVF uploaded using OLED and onboard buttons.
+
+Wake up on RTC: Turn off green LED D18
+
+    usb-jtag/linux/ftx_prog --cbus 3 DRIVE_0
+
+After USB is re-plugged, D18 should be OFF. If D18 is ON the board is always
+ON. If D18 is OFF, the board can enter shutdown state and wake up on RTC.
+Put 3V battery CR1225 in (respect polarity) and set RTC current time,
+alarm time, enable alarm and set alarm output pin polarity as active LOW.
+If alarm is not yet triggered, LED D11 (found on back side of the board near J1
+pin 22) should be very dimly lit, visible in dark.
+When alarm is triggered, D11 should be off. While D11 is dimly lit, power down 
+board by setting SHUTDOWN signal to 1 or shortly connect R13 to 3.3V.
+When alarm is triggered, board should turn on.
