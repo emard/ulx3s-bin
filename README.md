@@ -121,8 +121,9 @@ its connections using universal instrument set to diode test.
 Connect it reverse: (+) RED wire to GND of PCB, probe FPGA
 pins connectivity with (-) BLACK wire. A reading of 0.5-0.7 V
 indicate proper electrical connection to BGA. It comes from
-the voltage drop of reverse polarity protection silicon diodes
-which come from silicon wafer design and are present on every pin.
+the voltage drop of reverse polarity protection diodes
+from silicon wafer architecture. Such diodes are present
+on every pin.
 
 FPGA chip soldered on PCB without any other parts
 should respond to JTAG commands if proper supply voltages
