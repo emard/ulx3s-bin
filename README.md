@@ -126,8 +126,10 @@ which come from silicon wafer design and are present on every pin.
 
 FPGA chip soldered on PCB without any other parts
 should respond to JTAG commands if proper supply voltages
-1.1V, 2.5V, 3.3V are connected. No clock, no capacitors,
-no resistors nothing else is required for this test, just BGA soldered.
+1.1V, 2.5V, 3.3V are connected. It will respond with JTAG ID
+and will also accept programming with suitable bitstream.
+No clock, no capacitors, no resistors nothing else is required
+for this test, just BGA soldered.
 
 If this test passes, proceed with soldering rest of components.
 Solder "power" and "usb" section and try programming
