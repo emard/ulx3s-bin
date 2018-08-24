@@ -125,6 +125,11 @@ the voltage drop of reverse polarity protection diodes
 from silicon wafer architecture. Such diodes are present
 on every pin.
 
+Most important is that all JTAG pins have connection.
+If JTAG didn't make connection but if FLASH pins are good
+then it is possible to externally program FLASH bootloader
+and have some use of the board over US2 port.
+
 FPGA chip soldered on PCB without any other parts
 should respond to JTAG commands if proper supply voltages
 1.1V, 2.5V, 3.3V are connected. It will respond with JTAG ID
