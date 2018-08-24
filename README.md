@@ -112,3 +112,24 @@ pin 22) should be very dimly lit, visible in dark.
 When alarm is triggered, D11 should be off. While D11 is dimly lit, power down 
 board by setting SHUTDOWN signal to 1 or shortly connect R13 to 3.3V.
 When alarm is triggered, board should turn on.
+
+# Troubleshooting
+
+If manually soldering, solder first BGA chip and check all of
+its connections using universal instrument set to diode test.
+
+Connect it reverse: (+) RED wire to GND of PCB, probe FPGA
+pins connectivity with (-) BLACK wire. A reading of 0.5-0.7 V
+indicate proper electrical connection to BGA. It comes from
+the voltage drop of reverse polarity protection silicon diodes
+which come from silicon wafer design and are present on every pin.
+
+FPGA chip soldered on PCB without any other parts
+should respond to JTAG commands if proper supply voltages
+1.1V, 2.5V, 3.3V are connected. No clock, no capacitors,
+no resistors nothing else is required for this test, just BGA soldered.
+
+If this test passes, proceed with soldering rest of components.
+Solder "power" and "usb" section and try programming
+using US1 connector. Don't forget diode D8 at "usb" section, it
+passes 5V USB supply to the power section.
