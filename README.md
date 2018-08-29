@@ -11,6 +11,7 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --max-bus-power 500
     usb-jtag/linux/ftx_prog --manufacturer "FER-RADIONA-EMARD"
     usb-jtag/linux/ftx_prog --product "ULX3S FPGA 45K v1.7"
+    usb-jtag/linux/ftx_prog --cbus 2 TxRxLED
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device will appear with above name.
