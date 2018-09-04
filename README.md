@@ -142,3 +142,21 @@ If this test passes, proceed with soldering rest of components.
 Solder "power" and "usb" section and try programming
 using US1 port. Don't forget diode D8 at "usb" section, it
 forwards 5V USB supply to the power section.
+
+Before plugging to US1 power, First cut the RP1,2,3 jumpers open
+to prevent wrong voltages being initally applied to rest of the board.
+Measure voltages at jumpers:
+
+    RP1: 1.1V
+    RP2: 2.5V
+    RP3: 3.3V
+
+If this voltages are OK (should be within 5% accuracy)
+then close jumpers, the voltage will be found at capacitors under BGA:
+
+    C17: 1.1V
+    C19: 2.5V
+    C20: 3.3V
+
+Powered but unprogrammed FPGA chip should not generate any heat
+noticeable by touch of a finger.
