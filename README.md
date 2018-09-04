@@ -141,4 +141,4 @@ for this test, just BGA soldered.
 If this test passes, proceed with soldering rest of components.
 Solder "power" and "usb" section and try programming
 using US1 port. Don't forget diode D8 at "usb" section, it
-passes 5V USB supply to the power section.
+forwards 5V USB supply to the power section.
