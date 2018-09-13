@@ -15,19 +15,14 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device will appear with above name.
-Upload f32c CPU to FLASH for boards with 45F chip.
-Upload is slow, may run for 15 minutes
+Upload f32c CPU for appropriate with 12F/25F/45F/85F chip.
 
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector/f32c-ulx3s-45k-vector-selftest-flash.vme
-
-for boards with 85F chip:
-
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-85k-vector/f32c-ulx3s-85k-vector-selftest-flash.vme
+    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-12k-v20/f32c-ulx3s-12k-selftest-sram.vme
 
 Re-plug USB. If HDMI monitor is connected, a color test screen 640x480 should appear.
 Upload self-test binary executable
 
-    fpga/f32c/f32cup.py fpga/f32c/f32c-bin/selftest1.bin
+    fpga/f32c/f32cup.py fpga/f32c/f32c-bin/selftest-mcp7940n.bin
 
 Upload progess will be printed
 
