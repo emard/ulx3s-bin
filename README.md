@@ -10,12 +10,13 @@ Set ftdi usbserial name
 
     usb-jtag/linux/ftx_prog --max-bus-power 500
     usb-jtag/linux/ftx_prog --manufacturer "FER-RADIONA-EMARD"
-    usb-jtag/linux/ftx_prog --product "ULX3S FPGA 45K v1.7"
+    usb-jtag/linux/ftx_prog --product "ULX3S FPGA 12K v2.1.2"
     usb-jtag/linux/ftx_prog --cbus 2 TxRxLED
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
-Re-plug USB, device will appear with above name.
-Upload f32c CPU appropriate for 12F/25F/45F/85F chip
+FleaFPGA-JTAG will recognize "12K", "25K", "45K" or "85K" and
+treat any of them the same way. Re-plug USB, device will appear with
+above name. Upload f32c CPU appropriate for 12F/25F/45F/85F chip
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-12k-v20/f32c-ulx3s-12k-selftest-sram.vme
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-25k-vector-v20/f32c-ulx3s-25k-vector-selftest-sram.vme
