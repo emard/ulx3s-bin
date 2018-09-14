@@ -15,7 +15,7 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device will appear with above name.
-Upload f32c CPU appropriate for 12F/25F/45F/85F chip.
+Upload f32c CPU appropriate for 12F/25F/45F/85F chip
 
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-12k-v20/f32c-ulx3s-12k-selftest-sram.vme
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-25k-vector-v20/f32c-ulx3s-25k-vector-selftest-sram.vme
