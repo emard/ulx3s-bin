@@ -5,7 +5,7 @@
 ! User information:
 ! File name: project/project_project_sram.svf
 ! CREATED BY:    Diamond Deployment Tool 3.7
-! CREATION DATE: Sat Sep 15 11:01:17 2018
+! CREATION DATE: Sat Sep 15 13:12:25 2018
 ! Device: LFE5U-45F  Fast Program project/project_project.bit
 ! LATTICE_NOTE "Device" "LFE5U-45F"
 ! SVF Revision D Format
@@ -18,7 +18,7 @@
 ! Design name: project_project.ncd
 ! Architecture: sa5p00
 ! Part: LFE5U-45F-6CABGA381
-! Date: Sat Sep 15 11:01:10 2018
+! Date: Sat Sep 15 13:12:18 2018
 ! Rows: 9470
 ! Cols: 846
 ! Bits: 8011620
