@@ -75,10 +75,11 @@ burn efuse to ignore GPIO12 and fix flash voltage to 3.3V
     ./burn-efuse-flash-3v3.sh
 
 Upload ESP32 websvf application and SPI filesystem to ESP32
+(choose appropriate for 12F/25F/45F/85F chip)
 
     cd esp32
     ./upload-executable.sh
-    ./upload-spiffs.sh
+    ./upload-spiffs.sh websvf_sd/websvf_sd_v20_12f.spiffs.bin
 
 If upload fails with error or doesn't progress, press Ctrl-C and
 retry until it succeeds with:
