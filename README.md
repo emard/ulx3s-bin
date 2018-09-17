@@ -67,7 +67,9 @@ upload pass-thru bitstream to FPGA config flash
     usb-jtag/linux/FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
 
 Re-plug USB, some LEDs will be lit by passthru bitstream.
-Burn ESP32 efuse to ignore GPIO12 and fix flash voltage to 3.3V
+Make sure SD card is not yet inserted.
+To allow programming ESP32 when SD card is inserted,
+burn efuse to ignore GPIO12 and fix flash voltage to 3.3V
 
     cd esp32
     ./burn-efuse-flash-3v3.sh
