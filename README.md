@@ -149,7 +149,7 @@ ft231x.ocd
     # trst/srst are not used but must have different numbers than above
     ft232r_trst_num 2
     ft232r_srst_num 4
-    # increase buffer if write errors appear
+    # increase buffer in case of Error: ft232r_write: buffer overflow
     ft232r_buffer_size 16384
     adapter_khz 300
 
