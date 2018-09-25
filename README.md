@@ -179,7 +179,6 @@ OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
     FT232R buffer size: 16384 bytes
     adapter speed: 300 kHz
     Info : clock speed 300 kHz
-    Error: read more bytes than wrote
     Info : JTAG tap: lfe5u12.tap tap/device found: 0x21111043 (mfg: 0x021 (Lattice Semi.), part: 0x1111, ver: 0x2)
     Warn : gdb services need one or more targets defined
        TapName             Enabled  IdCode     Expected   IrLen IrCap IrMask
