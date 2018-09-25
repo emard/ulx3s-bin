@@ -116,6 +116,62 @@ When alarm is triggered, D11 should be off. While D11 is dimly lit, power down
 board by setting SHUTDOWN signal to 1 or shortly connect R13 to 3.3V.
 When alarm is triggered, board should turn on.
 
+# OpenOCD
+
+Beides FleaFPGA-JTAG, ULX3S can be programmed using OpenOCD too.
+External JTAG like FT2232 can be used, but in recent OpenOCD's
+appearedd FT232R driver which can be patched to work with onboard
+FT231X.
+
+[Source openOCD FT232R](https://github.com/emard/openocd).
+can be compiled into
+[Binary OpenOCD FT232R](/usb-jtag/linux/openocd)
+using this shell commands:
+
+    cd openocd
+    ./bootstrap
+    mkdir build
+    cd build
+    ../configure --enable-ft232r
+    make
+
+OpenOCD config files for ULX3S boards:
+
+ft231x.ocd
+
+    interface ft232r
+    ft232r_vid_pid 0x0403 0x6015
+    # ULX3S specific GPIO setting
+    ft232r_tck_num 5
+    ft232r_tms_num 6
+    ft232r_tdi_num 7
+    ft232r_tdo_num 3
+    ft232r_trst_num 2
+    ft232r_srst_num 4
+    # increase buffer if write errors appear
+    ft232r_buffer_size 16384
+    adapter_khz 1000
+
+ecp5-XXf.cfg
+
+    telnet_port 4444
+    gdb_port 3333
+
+    # JTAG TAPs
+    jtag newtap lfe5u12 tap -expected-id 0x21111043 -irlen 8 -irmask 0xFF -ircapture 0x5
+    #jtag newtap lfe5u25 tap -expected-id 0x41111043 -irlen 8 -irmask 0xFF -ircapture 0x5
+    #jtag newtap lfe5u45 tap -expected-id 0x41112043 -irlen 8 -irmask 0xFF -ircapture 0x5
+    #jtag newtap lfe5u85 tap -expected-id 0x41113043 -irlen 8 -irmask 0xFF -ircapture 0x5
+
+    init
+    scan_chain
+    svf -tap lfe5u12.tap bitstream.svf
+    shutdown
+
+Usage
+
+    ./openocd --file=ft231x.ocd --file=ecp5-XXf.cfg
+
 # Troubleshooting
 
 If manually soldering, solder first BGA chip and check all of
