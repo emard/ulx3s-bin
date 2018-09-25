@@ -223,7 +223,7 @@ Measure voltages at jumpers:
     RP2: 2.5V
     RP3: 3.3V
 
-If this voltages are OK (should be within 5% accuracy)
+If this voltages are OK (should be within 2% accuracy)
 then close jumpers, the voltage will be found at capacitors under BGA:
 
     C17: 1.1V
