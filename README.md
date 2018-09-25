@@ -231,5 +231,5 @@ then close jumpers, the voltage will be found at capacitors under BGA:
     C20: 3.3V
 
 Powered but unprogrammed FPGA chip should not generate any heat noticeable by
-touch of a finger and whole board in initial state should draw about 50mA.
+touch of a finger and whole board in initial state should draw less than 50mA.
 On top side, green LED D18 should be ON, other LEDs OFF. 
