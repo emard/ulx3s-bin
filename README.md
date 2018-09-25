@@ -120,7 +120,7 @@ When alarm is triggered, board should turn on.
 
 Beides FleaFPGA-JTAG, ULX3S can be programmed using OpenOCD too.
 External JTAG like FT2232 can be used, but in recent OpenOCD's
-appearedd FT232R driver which can be patched to work with onboard
+appeared FT232R driver which can be patched to work with onboard
 FT231X.
 
 [Source openOCD FT232R](https://github.com/emard/openocd).
@@ -146,6 +146,7 @@ ft231x.ocd
     ft232r_tms_num 6
     ft232r_tdi_num 7
     ft232r_tdo_num 3
+    # trst/srst are not used but must have different numbers than above
     ft232r_trst_num 2
     ft232r_srst_num 4
     # increase buffer if write errors appear
@@ -168,9 +169,23 @@ ecp5-XXf.cfg
     svf -tap lfe5u12.tap bitstream.svf
     shutdown
 
-Usage
+OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
 
     ./openocd --file=ft231x.ocd --file=ecp5-XXf.cfg
+
+    FT232R nums: tck = 5, tms = 6, tdi = 7, tdo = 3
+    FT232R num: trst = 2
+    FT232R num: srst = 4
+    FT232R buffer size: 16384 bytes
+    adapter speed: 1000 kHz
+    Info : clock speed 1000 kHz
+    Error: read more bytes than wrote
+    Info : JTAG tap: lfe5u12.tap tap/device found: 0x21111043 (mfg: 0x021 (Lattice Semi.), part: 0x1111, ver: 0x2)
+    Warn : gdb services need one or more targets defined
+       TapName             Enabled  IdCode     Expected   IrLen IrCap IrMask
+    -- ------------------- -------- ---------- ---------- ----- ----- ------
+     0 lfe5u12.tap            Y     0x21111043 0x21111043     8 0x05  0xff
+    svf processing file: "bitstream.svf"
 
 # Troubleshooting
 
