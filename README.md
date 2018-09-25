@@ -118,10 +118,10 @@ When alarm is triggered, board should turn on.
 
 # OpenOCD
 
-Beides FleaFPGA-JTAG, ULX3S can be programmed using OpenOCD too.
-External JTAG like FT2232 can be used, but in recent OpenOCD's
-appeared FT232R driver which can be patched to work with onboard
-FT231X.
+Besides FleaFPGA-JTAG, ULX3S can be programmed using OpenOCD too.
+External JTAG like FT2232 can be used, but in recent OpenOCD
+there is FT232R driver which can be patched to work with onboard
+FT231X. It works but FleaFPGA-JTAG is much faster.
 
 [Source openOCD FT232R](https://github.com/emard/openocd).
 can be compiled into
