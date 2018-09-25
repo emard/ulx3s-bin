@@ -151,7 +151,7 @@ ft231x.ocd
     ft232r_srst_num 4
     # increase buffer if write errors appear
     ft232r_buffer_size 16384
-    adapter_khz 1000
+    adapter_khz 300
 
 ecp5-XXf.cfg
 
@@ -177,8 +177,8 @@ OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
     FT232R num: trst = 2
     FT232R num: srst = 4
     FT232R buffer size: 16384 bytes
-    adapter speed: 1000 kHz
-    Info : clock speed 1000 kHz
+    adapter speed: 300 kHz
+    Info : clock speed 300 kHz
     Error: read more bytes than wrote
     Info : JTAG tap: lfe5u12.tap tap/device found: 0x21111043 (mfg: 0x021 (Lattice Semi.), part: 0x1111, ver: 0x2)
     Warn : gdb services need one or more targets defined
