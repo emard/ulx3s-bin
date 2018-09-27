@@ -142,16 +142,14 @@ ft231x.ocd
     interface ft232r
     ft232r_vid_pid 0x0403 0x6015
     # ULX3S specific GPIO setting
-    ft232r_tck_num 5
-    ft232r_tms_num 6
-    ft232r_tdi_num 7
-    ft232r_tdo_num 3
-    # trst/srst are not used but must have different numbers than above
-    ft232r_trst_num 2
-    ft232r_srst_num 4
-    # increase buffer in case of Error: ft232r_write: buffer overflow
-    ft232r_buffer_size 16384
-    adapter_khz 300
+    ft232r_tck_num DSR
+    ft232r_tms_num DCD
+    ft232r_tdi_num RI
+    ft232r_tdo_num CTS
+    # trst/srst are not used but must have different values than above
+    ft232r_trst_num RTS
+    ft232r_srst_num DTR
+    adapter_khz 1000
 
 ecp5-XXf.cfg
 
