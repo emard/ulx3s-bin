@@ -132,7 +132,7 @@ using this shell commands:
     ./bootstrap
     mkdir build
     cd build
-    ../configure --enable-ft232r
+    ../configure
     make
 
 OpenOCD config files for ULX3S boards:
@@ -164,21 +164,21 @@ ecp5-XXf.cfg
 
     init
     scan_chain
-    svf -tap lfe5u12.tap bitstream.svf
+    svf -tap lfe5u12.tap -quiet -progress bitstream.svf
     shutdown
 
 OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
 
     ./openocd --file=ft231x.ocd --file=ecp5-XXf.cfg
 
-    FT232R nums: tck = 5, tms = 6, tdi = 7, tdo = 3
-    FT232R num: trst = 2
-    FT232R num: srst = 4
-    FT232R buffer size: 16384 bytes
-    adapter speed: 300 kHz
-    Info : clock speed 300 kHz
+    FT232R num: TCK = 5 DSR
+    FT232R num: TMS = 6 DCD
+    FT232R num: TDI = 7 RI
+    FT232R num: TDO = 3 CTS
+    FT232R num: TRST = 2 RTS
+    FT232R num: SRST = 4 DTR
+    adapter speed: 1000 kHz
     Info : JTAG tap: lfe5u12.tap tap/device found: 0x21111043 (mfg: 0x021 (Lattice Semi.), part: 0x1111, ver: 0x2)
-    Warn : gdb services need one or more targets defined
        TapName             Enabled  IdCode     Expected   IrLen IrCap IrMask
     -- ------------------- -------- ---------- ---------- ----- ----- ------
      0 lfe5u12.tap            Y     0x21111043 0x21111043     8 0x05  0xff
