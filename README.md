@@ -87,9 +87,13 @@ retry until it succeeds with:
 
     Hash of data verified.
 
-Start websvf in open AP mode:
-Unplug USB, while keeping BTN0 pressed, plug USB. After blue LED
-blinks once (lit for 0.5 seconds), quickly release BTN0.
+To Start websvf in open AP mode: Unplug USB, while keeping BTN0 pressed,
+plug USB. After blue LED blinks once (lit for 0.5 seconds), quickly release BTN0.
+This procedure sometimes needs to be applied also to reflash ESP32 and to prevent
+ESP32 autoexec at power-on when following two files exist:
+
+    /ULX3S/f32c/autoexec/f32c.svf      # f32c bitstream for autoexec
+    /ULX3S/f32c/autoexec/autoexec.bit  # f32c binary executable
 
 Web opration without SD: Connect to the AP (SSID:websvf). Open web browser
 "firefox", open page http://192.168.4.1 and from there SVF files can be uploaded
