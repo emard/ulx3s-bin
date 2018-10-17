@@ -10,7 +10,7 @@ Set ftdi usbserial name
 
     usb-jtag/linux/ftx_prog --max-bus-power 500
     usb-jtag/linux/ftx_prog --manufacturer "FER-RADIONA-EMARD"
-    usb-jtag/linux/ftx_prog --product "ULX3S FPGA 12K v2.1.2"
+    usb-jtag/linux/ftx_prog --product "ULX3S FPGA 12K v3.0.3"
     usb-jtag/linux/ftx_prog --new-serial-number 120001
     usb-jtag/linux/ftx_prog --cbus 2 TxRxLED
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
