@@ -5,7 +5,7 @@
 ! User information:
 ! File name: project/passthru_ulx3s_v20_45k_sram.svf
 ! CREATED BY:    Diamond Deployment Tool 3.7
-! CREATION DATE: Wed Oct 10 11:32:22 2018
+! CREATION DATE: Thu Oct 18 02:33:18 2018
 ! Device: LFE5U-45F  Fast Program project/project_project.bit
 ! LATTICE_NOTE "Device" "LFE5U-45F"
 ! SVF Revision D Format
@@ -18,7 +18,7 @@
 ! Design name: project_project.ncd
 ! Architecture: sa5p00
 ! Part: LFE5U-45F-6CABGA381
-! Date: Wed Oct 10 11:32:15 2018
+! Date: Thu Oct 18 02:33:11 2018
 ! Rows: 9470
 ! Cols: 846
 ! Bits: 8011620
