@@ -93,7 +93,7 @@ retry until it succeeds with:
     Hash of data verified.
 
 To Start websvf in open AP mode: Unplug USB, while keeping BTN0 pressed,
-plug USB. After blue LED blinks once (lit for 0.5 seconds), quickly release BTN0.
+plug USB. After LED D22 blinks once (lit for 0.5 seconds), quickly release BTN0.
 This procedure sometimes needs to be applied also to reflash ESP32 and to prevent
 ESP32 autoexec at power-on when following two files exist:
 
