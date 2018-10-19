@@ -15,14 +15,17 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --cbus 2 TxRxLED
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
-FleaFPGA-JTAG will recognize "12K", "25K", "45K" or "85K" and
-treat any of them the same way. Re-plug USB, device will appear with
-above name. Upload f32c CPU appropriate for 12F/25F/45F/85F chip
+Re-plug USB, device should appear with above name. 
+USB-JTAG programmer "ujprog" accepts "*.bit" or "*.svf" files,
+programmer "FleaFPGA-JTAG" accepts "*.vme" files.
+Programmer will recognize product string and treat 
+"12K", "25K", "45K" or "85K" the same way.
+Upload f32c CPU appropriate for 12F/25F/45F/85F chip, example:
 
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-12k-v20/f32c-ulx3s-12k-selftest-sram.vme
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-25k-vector-v20/f32c-ulx3s-25k-vector-selftest-sram.vme
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector-v20/f32c-ulx3s-45k-vector-selftest-sram.vme
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-85k-vector-v19/f32c-ulx3s-85k-vector-selftest-sram.vme
+    usb-jtag/linux/ujprog fpga/f32c/f32c-12k-v20/f32c_ulx3s_v20_12k_selftest_100mhz.bit
+    usb-jtag/win32/ujprog.exe fpga/f32c/f32c-25k-vector-v20/f32c_selftest_ulx3s_v20_25k.bit
+    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector-v20/f32c_selftest_ulx3s_v20_45k_sram.vme
+    usb-jtag/win32/FleaFPGA-JTAG.exe fpga/f32c/f32c-85k-vector-v20/f32c_selftest_ulx3s_v20_85k_sram.vme
 
 Re-plug USB. If HDMI monitor is connected, a color test screen 640x480 should appear.
 Upload self-test binary executable
