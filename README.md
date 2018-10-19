@@ -27,8 +27,8 @@ Upload f32c CPU appropriate for 12F/25F/45F/85F chip, example:
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector-v20/f32c_selftest_ulx3s_v20_45k_sram.vme
     usb-jtag/win32/FleaFPGA-JTAG.exe fpga/f32c/f32c-85k-vector-v20/f32c_selftest_ulx3s_v20_85k_sram.vme
 
-Re-plug USB. If HDMI monitor is connected, a test screen 640x480 should appear
-with black background and white letters. Upload self-test binary executable
+Re-plug USB. If HDMI monitor is connected, a color test screen 640x480 should
+appear. Upload self-test binary executable
 
     fpga/f32c/f32cup.py fpga/f32c/f32c-bin/selftest-mcp7940n.bin
 
@@ -64,7 +64,8 @@ It should look like this
     DAC: L3210  OK  R3210  OK  V3210  OK 
     BTN:___34__ SW:1234 LED:__5___1_
 
-Same content as printed on usbserial should also be shown on HDMI monitor.
+Same content as printed on usbserial should also be shown on HDMI monitor
+on screen with black background and white letters. 
 If above self test looks good, board is useable.
 upload pass-thru bitstream to FPGA config flash
 
