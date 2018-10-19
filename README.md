@@ -27,8 +27,9 @@ Upload f32c CPU appropriate for 12F/25F/45F/85F chip, example:
     usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector-v20/f32c_selftest_ulx3s_v20_45k_sram.vme
     usb-jtag/win32/FleaFPGA-JTAG.exe fpga/f32c/f32c-85k-vector-v20/f32c_selftest_ulx3s_v20_85k_sram.vme
 
-Re-plug USB. If HDMI monitor is connected, a color test screen 640x480 should
-appear. Upload self-test binary executable
+Re-plug USB. If HDMI monitor is connected, 
+a [color test screen](https://www.fpga4fun.com/HDMI.html) 640x480 
+should appear. Upload self-test binary executable
 
     fpga/f32c/f32cup.py fpga/f32c/f32c-bin/selftest-mcp7940n.bin
 
