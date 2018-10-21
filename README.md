@@ -98,7 +98,7 @@ plug USB. After LED D22 blinks once (lit for 0.5 seconds), quickly release BTN0.
 This procedure sometimes needs to be applied also to reflash ESP32 and to prevent
 ESP32 autoexec at power-on when following two files exist:
 
-    /ULX3S/f32c/autoexec/f32c.svf      # f32c bitstream for autoexec
+    /ULX3S/f32c/autoexec/f32c.svf      # f32c soft-core CPU bitstream
     /ULX3S/f32c/autoexec/autoexec.bit  # f32c binary executable
 
 Web opration without SD: Connect to the AP (SSID:websvf). Open web browser
