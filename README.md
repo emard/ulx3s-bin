@@ -47,7 +47,8 @@ ULX3S should blink LEDs and print test results on usbserial 115200,8,N,1
     stty sane 115200 < /dev/ttyUSB0
     cat /dev/ttyUSB0
 
-RTC clock should advance. CRC OK should be displayed if monitor is connected.
+RTC clock should advance. CRC OK should be displayed if monitor is connected
+and U11 chip is onboard.
 ADC readings should alternate from 1000 to 1FF0.
 Holding pushbuttons and changing DIP switches should change value at BTN and SW.
 It should look like this
