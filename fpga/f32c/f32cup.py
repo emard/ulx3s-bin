@@ -15,12 +15,12 @@ f32c_filename = sys.argv[1]
 # byte length of chunked file read and upload
 chunksize = 8192
 # seconds to hold serial break
-serial_break_duration = 0.1
+serial_break_duration = 0.12
 # bps serial
 serial_baud_default = 115200 # normal f32c prompt speed after reset (don't touch)
 serial_baud_upload = 115200 # upload speed - 115200 or 3000000 (3 Mbit)
 # seconds for serial port timeout
-serial_timeout = 0.1
+serial_timeout = 0.2
 # serial file open descriptor
 serial_port = None
 # file open descriptor
