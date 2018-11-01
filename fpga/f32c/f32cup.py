@@ -15,7 +15,7 @@ f32c_filename = sys.argv[-1]
 # byte length of chunked file read and upload
 chunksize = 8192
 # seconds to hold serial break
-serial_break_duration = 0.12
+serial_break_duration = 0.1
 # bps serial
 serial_baud_default = 115200 # normal f32c prompt speed after reset (don't touch)
 serial_baud_upload = 115200 # upload speed - 115200 or 3000000 (3 Mbit)
@@ -64,10 +64,11 @@ def parse_cmd_options():
 # prompt is received or give up
 def try_to_get_prompt(retries = 2):
   global serial_port
+  global serial_break_duration
   while retries > 0:
     serial_port.reset_input_buffer()
     serial_port.reset_output_buffer()
-    serial_port.send_break(duration = serial_break_duration)
+    serial_port.send_break(duration = 1000.0 * serial_break_duration) # ms duration
     reply = serial_port.read(20)
     if reply.find(b"m32l> "):
       return 1 # MIPS little-endian prompt is found
@@ -123,12 +124,14 @@ def upload_block(addr, chunk, first = True, retry_block = 5, retry_crc = 4):
     if first:
       serial_port.baudrate = serial_baud_default
       if try_to_get_prompt() > 0:
+        # print("got f32c prompt")
         serial_port.write(b"\xFF") # request binary upload
+        # time.sleep(10.0e-3)
         # change baudrate if not default
         if serial_baud_upload != serial_baud_default:
-          header = b"\x80" + struct.pack(">L", serial_baud_upload) + b"\xb0"
+          header = b"\x80" + struct.pack(">L", serial_baud_upload) + b"\xB0"
           serial_port.write(header)
-          time.sleep(50.0e-3)
+          serial_port.flush()
           serial_port.baudrate = serial_baud_upload
       else:
         break # go to retry
@@ -173,11 +176,11 @@ def read_upload_jump():
    and header[6:8]   == b"\x10\x26" \
    and header[10:12] == b"\x11\x3C" \
    and header[14:16] == b"\x31\x26":
-     print("MIPS Little-Endian header received")
+     print("MIPS Little-Endian file")
      start_address = (header[1] << 24) + (header[0] << 16) + (header[5] << 8) + header[4]
    if  header[0:2]   == b"\x97\x0F" \
    and header[4:6]   == b"\x93\x81":
-     print("RISC-V Little-Endian header received")
+     print("RISC-V Little-Endian file")
      start_address = 0x400 # FIXME HARDCODED LOAD ADDRESS FIXME
    # print("start_address:0x%08X" % start_address)
    chunk = header
