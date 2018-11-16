@@ -39,14 +39,14 @@ def get_cmdline_options():
 
  opts, extraparams = getopt.getopt(
      sys.argv[1:],
-     'p:b:f:',
-     ['port=', 'baud=', 'break=', 'chunk=', 'file=']
+     'p:b:f:h',
+     ['port=', 'baud=', 'break=', 'chunk=', 'file=', "help"]
  )
    
  for o,p in opts:
   if o in ['-b','--baud']:
    serial_baud_upload = int(float(p)+0.5)
-  if o in ['--chunk']:
+  elif o in ['--chunk']:
    chunksize = int(p)
   elif o in ['--break']:
    serial_break_duration = float(p)
@@ -54,6 +54,17 @@ def get_cmdline_options():
    f32c_filename = p
   elif o in ['-p','--port']:
    f32c_serial_device_name = p
+  elif o in ['-h','--help']:
+   print("usage: options filename")
+   print("  option             unit   meaning:");
+   print("  [-p|--port=string]        serial port (default /dev/ttyUSB0)")
+   print("  [-b|--baud=float]  bps    baudrate    (default 115200)")
+   print("  [--chunk=int]      bytes  chunk size  (default 8192)")
+   print("  [--break=float]    s      chunk size  (default 0.1)")
+   print("  [-h|--help]               this help message")
+   return 0
+ return 1
+
 
 
 def parse_cmd_options():
@@ -69,6 +80,7 @@ def try_to_get_prompt(retries = 2):
     serial_port.reset_input_buffer()
     serial_port.reset_output_buffer()
     serial_port.send_break(duration = 1000.0 * serial_break_duration) # ms duration
+    serial_port.write(b" ")
     reply = serial_port.read(20)
     if reply.find(b"m32l> "):
       return 1 # MIPS little-endian prompt is found
@@ -212,9 +224,9 @@ def main():
   global serial_baud_default
   global serial_port
 
-  get_cmdline_options()
-  serial_port=serial.Serial(f32c_serial_device_name, serial_baud_default, rtscts=False, timeout=serial_timeout)
-  read_upload_jump()
-  serial_port.close()
+  if get_cmdline_options():
+    serial_port=serial.Serial(f32c_serial_device_name, serial_baud_default, rtscts=False, timeout=serial_timeout)
+    read_upload_jump()
+    serial_port.close()
 
 main()
