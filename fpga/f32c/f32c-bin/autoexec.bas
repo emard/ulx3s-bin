@@ -7,4 +7,5 @@
 160 REM SLEEP 2
 200 REM EXEC "demo/galaga.bin"
 210 REM EXEC "demo/synth100.bin"
-220 EXEC "demo/test_mcp.bin"
+220 REN EXEC "demo/test_pcf.bin"
+230 EXEC "demo/test_mcp.bin"
