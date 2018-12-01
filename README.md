@@ -16,9 +16,10 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device should appear with above name. 
-USB-JTAG programmer "ujprog" accepts "*.bit" or "*.svf" files,
-programmer "FleaFPGA-JTAG" accepts "*.vme" files.
-Programmer will recognize product string and treat 
+USB-JTAG programmer [ujprog binary](/usb-jtag/), [ujprog source](https://github.com/f32c/tools) accepts
+"*.bit" or "*.svf" files,
+programmer [FleaFPGA-JTAG binary](/usb-jtag/), [FleaFPGA-JTAG source](https://github.com/emard/FleaFPGA-JTAG) accepts
+"*.vme" files. Programmer will recognize product string and treat 
 "12K", "25K", "45K" or "85K" the same way.
 Upload f32c CPU appropriate for 12F/25F/45F/85F chip, example:
 
