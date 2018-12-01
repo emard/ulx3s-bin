@@ -198,8 +198,10 @@ OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
 
 # Troubleshooting
 
-If you see some FAILs in DAC, make sure that you uploaded suitable bitstream
-[f32c for selftest](/fpga/f32c). f32c for "normal" use will always show DAC fails.
+If you see some FAIL in DAC, make sure that you uploaded suitable
+bitstream [f32c binary for selftest](/fpga/f32c) or compiled
+from [f32c source](https://github.com/f32c/f32c/tree/master/rtl/proj/lattice/ulx3s).
+f32c for "normal" (non-selftest) use should always show DAC fails.
 
 If manually soldering, solder first BGA chip and check all of
 its connections using universal instrument set to diode test.
