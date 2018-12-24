@@ -16,11 +16,12 @@ Set ftdi usbserial name
     usb-jtag/linux/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device should appear with above name. 
-USB-JTAG programmer "ujprog" accepts "*.bit" or "*.svf" files,
-programmer "FleaFPGA-JTAG" accepts "*.vme" files.
-Programmer will recognize product string and treat 
+USB-JTAG programmer [ujprog binary](/usb-jtag/), [ujprog source](https://github.com/f32c/tools) accepts
+"*.bit" or "*.svf" files,
+programmer [FleaFPGA-JTAG binary](/usb-jtag/), [FleaFPGA-JTAG source](https://github.com/emard/FleaFPGA-JTAG) accepts
+"*.vme" files. Programmer will recognize product string and treat 
 "12K", "25K", "45K" or "85K" the same way.
-Upload f32c CPU appropriate for 12F/25F/45F/85F chip, example:
+Upload f32c CPU appropriate for selft-test of 12F/25F/45F/85F chip, example:
 
     usb-jtag/linux/ujprog fpga/f32c/f32c-12k-v20/f32c_ulx3s_v20_12k_selftest_100mhz.bit
     usb-jtag/win32/ujprog.exe fpga/f32c/f32c-25k-vector-v20/f32c_selftest_ulx3s_v20_25k.bit
@@ -196,6 +197,11 @@ OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
     svf processing file: "bitstream.svf"
 
 # Troubleshooting
+
+If you see some FAIL in DAC, make sure that you uploaded suitable
+bitstream [f32c binary for selftest](/fpga/f32c) or compiled
+from [f32c source](https://github.com/f32c/f32c/tree/master/rtl/proj/lattice/ulx3s).
+f32c for "normal" (non-selftest) use should always show DAC fails.
 
 If manually soldering, solder first BGA chip and check all of
 its connections using universal instrument set to diode test.
