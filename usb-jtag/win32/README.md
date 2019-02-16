@@ -1,4 +1,4 @@
-# win64 binaries
+# windows binaries
 
 You need to install [FTDI D2XX CDM Driver](https://www.ftdichip.com/Drivers/D2XX.htm)
 and try if ujprog works.
