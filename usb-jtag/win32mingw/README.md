@@ -1,6 +1,6 @@
 # win32 binaries
 
-You need to install [FTDI CDM Driver](https://www.ftdichip.com/Drivers/CDM)
+You need to install [FTDI D2XX CDM Driver](https://www.ftdichip.com/Drivers/D2XX.htm)
 and try if ujprog works.
 
 Sometimes installing FTDI driver is not enough, and ujprog needs
