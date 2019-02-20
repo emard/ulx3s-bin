@@ -140,7 +140,7 @@ file [gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip](gnu-mcu-eclipse
 or later/another for your OS.
 You can also try my local [Linux Binary OpenOCD](/usb-jtag/linux/openocd) until
 openocd properly appears in all major linux distributions.
-It should be possible to compile [OpenOCD mainstream Source](http://openocd.org/) using this shell commands:
+It should be possible to compile [OpenOCD Mainstream Source](http://openocd.org/) using this shell commands:
 
     cd openocd
     ./bootstrap
