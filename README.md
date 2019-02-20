@@ -132,8 +132,8 @@ When alarm is triggered, board should turn on.
 
 Besides FleaFPGA-JTAG, ULX3S can be programmed using OpenOCD too.
 External JTAG like FT2232 can be used, but in recent OpenOCD
-there is FT232R driver which can be patched to work with onboard
-FT231X. It works but FleaFPGA-JTAG is much faster.
+there is FT232R driver which works with onboard FT231X.
+It works but FleaFPGA-JTAG is much faster.
 
 Take [OpenOCD unofficial binaries](https://github.com/gnu-mcu-eclipse/openocd/releases)
 file [gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip](gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip)
