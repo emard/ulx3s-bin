@@ -136,7 +136,7 @@ there is FT232R driver which works with onboard FT231X.
 It works but FleaFPGA-JTAG is much faster.
 
 Take [OpenOCD unofficial binaries](https://github.com/gnu-mcu-eclipse/openocd/releases)
-file [gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip](gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip)
+file [gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip](https://github.com/gnu-mcu-eclipse/openocd/releases/download/v0.10.0-11-20190118/gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip)
 or later/another for your OS.
 You can also try my local [Linux Binary OpenOCD](/usb-jtag/linux/openocd) until
 openocd properly appears in all major linux distributions.
