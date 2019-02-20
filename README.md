@@ -136,8 +136,9 @@ there is FT232R driver which can be patched to work with onboard
 FT231X. It works but FleaFPGA-JTAG is much faster.
 
 [Source openOCD FT232R](https://github.com/emard/openocd).
-can be compiled into
+can be compiled into my
 [Binary OpenOCD FT232R](/usb-jtag/linux/openocd)
+or [OpenOCD, maintained binaries 2019 or later](https://github.com/gnu-mcu-eclipse/openocd/releases)
 using this shell commands:
 
     cd openocd
@@ -146,6 +147,7 @@ using this shell commands:
     cd build
     ../configure
     make
+
 
 OpenOCD config files for ULX3S boards:
 
