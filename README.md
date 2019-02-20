@@ -135,9 +135,9 @@ External JTAG like FT2232 can be used, but in recent OpenOCD
 there is FT232R driver which can be patched to work with onboard
 FT231X. It works but FleaFPGA-JTAG is much faster.
 
-Take [OpenOCD unofficial binaries 2019 or later](https://github.com/gnu-mcu-eclipse/openocd/releases)
+Take [OpenOCD unofficial binaries](https://github.com/gnu-mcu-eclipse/openocd/releases)
 file [gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip](gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip)
-or another for your OS.
+or later/another for your OS.
 You can also try my local [Linux Binary OpenOCD](/usb-jtag/linux/openocd) until
 openocd properly appears in all major linux distributions.
 It should be possible to compile [OpenOCD mainstream Source](http://openocd.org/) using this shell commands:
