@@ -8,5 +8,6 @@
 200 REM EXEC "demo/galaga.bin"
 210 REM EXEC "demo/synth100.bin"
 230 REM EXEC "demo/test_pcf.bin"
-240 EXEC "demo/test_mcp.bin"
-250 REM EXEC "demo/slides.bin"
+240 REM EXEC "demo/test_mcp.bin"
+250 REM EXEC "demo/slides8.bin"
+260 EXEC "demo/slides16.bin"
