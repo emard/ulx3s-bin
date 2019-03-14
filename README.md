@@ -8,12 +8,12 @@ when connected to PC.
 
 Set ftdi usbserial name
 
-    usb-jtag/linux/ftx_prog --max-bus-power 500
-    usb-jtag/linux/ftx_prog --manufacturer "FER-RADIONA-EMARD"
-    usb-jtag/linux/ftx_prog --product "ULX3S FPGA 12K v3.0.3"
-    usb-jtag/linux/ftx_prog --new-serial-number 120001
-    usb-jtag/linux/ftx_prog --cbus 2 TxRxLED
-    usb-jtag/linux/ftx_prog --cbus 3 SLEEP
+    usb-jtag/linux-amd64/ftx_prog --max-bus-power 500
+    usb-jtag/linux-amd64/ftx_prog --manufacturer "FER-RADIONA-EMARD"
+    usb-jtag/linux-amd64/ftx_prog --product "ULX3S FPGA 12K v3.0.3"
+    usb-jtag/linux-amd64/ftx_prog --new-serial-number 120001
+    usb-jtag/linux-amd64/ftx_prog --cbus 2 TxRxLED
+    usb-jtag/linux-amd64/ftx_prog --cbus 3 SLEEP
 
 Re-plug USB, device should appear with above name. 
 USB-JTAG programmer [ujprog binary](/usb-jtag/), [ujprog source](https://github.com/f32c/tools) accepts
@@ -23,9 +23,9 @@ programmer [FleaFPGA-JTAG binary](/usb-jtag/), [FleaFPGA-JTAG source](https://gi
 "12K", "25K", "45K" or "85K" the same way.
 Upload f32c CPU appropriate for selft-test of 12F/25F/45F/85F chip, example:
 
-    usb-jtag/linux/ujprog fpga/f32c/f32c-12k-v20/f32c_ulx3s_v20_12k_selftest_100mhz.bit
+    usb-jtag/linux-amd64/ujprog fpga/f32c/f32c-12k-v20/f32c_ulx3s_v20_12k_selftest_100mhz.bit
     usb-jtag/win32/ujprog.exe fpga/f32c/f32c-25k-vector-v20/f32c_selftest_ulx3s_v20_25k.bit
-    usb-jtag/linux/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector-v20/f32c_selftest_ulx3s_v20_45k_sram.vme
+    usb-jtag/linux-amd64/FleaFPGA-JTAG fpga/f32c/f32c-45k-vector-v20/f32c_selftest_ulx3s_v20_45k_sram.vme
     usb-jtag/win32/FleaFPGA-JTAG.exe fpga/f32c/f32c-85k-vector-v20/f32c_selftest_ulx3s_v20_85k_sram.vme
 
 If HDMI monitor is connected, 
@@ -72,7 +72,7 @@ on screen with black background and white letters.
 If above self test looks good, board is useable.
 upload pass-thru bitstream to FPGA config flash
 
-    usb-jtag/linux/FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
+    usb-jtag/linux-amd64/FleaFPGA-JTAG fpga/passthru-v18/passthru-45k-flash.vme
 
 Re-plug USB, some LEDs will be lit by passthru bitstream.
 Make sure SD card is not yet inserted.
@@ -116,7 +116,7 @@ be browsed and SVF uploaded using OLED and onboard buttons.
 
 Wake up on RTC: Turn off green LED D18
 
-    usb-jtag/linux/ftx_prog --cbus 3 DRIVE_0
+    usb-jtag/linux-amd64/ftx_prog --cbus 3 DRIVE_0
 
 After USB is re-plugged, D18 should be OFF. If D18 is ON the board is always
 ON. If D18 is OFF, the board can enter shutdown state and wake up on RTC.
@@ -138,7 +138,7 @@ It works but FleaFPGA-JTAG is much faster.
 Take [OpenOCD unofficial binaries](https://github.com/gnu-mcu-eclipse/openocd/releases)
 file "gnu-mcu-eclipse-openocd-0.10.0-11-20190118-1134-win32.zip"
 or later/another for your OS.
-You can also try my local [Linux Binary OpenOCD](/usb-jtag/linux/openocd) until
+You can also try my local [Linux Binary OpenOCD](/usb-jtag/linux-amd64/openocd) until
 openocd properly appears in all major linux distributions.
 It should be possible to compile [OpenOCD Mainstream Source](http://openocd.org/) using this shell commands:
 
