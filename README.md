@@ -208,6 +208,8 @@ Manufacturer's synthesis tool for Windows and Red Hat Linux is
 [Lattice Diamond](http://www.latticesemi.com/latticediamond).
 This project is helpful on how to convert Lattice diamond RPM package
 to [Lattice Diamond for Ubuntu](https://github.com/EnJens/lattice-diamond-3.10-ubuntu).
+Here is also a set of [scripts to fix Diamond on Debian](/fpga/diamond),
+for a semi-automatic use, some system administration knowledge is required.
 
 FPGA Opensource Synthesis tools are available for ECP5. Fully functional
 and tested on ULX3S boards. A wonderful set of examples for ULX3S
