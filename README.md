@@ -199,6 +199,23 @@ OpenOCD at start should detect JTAG ID of the FPGA chip, something like this
      0 lfe5u12.tap            Y     0x21111043 0x21111043     8 0x05  0xff
     svf processing file: "bitstream.svf"
 
+# Synthesis tools
+
+To compile (aka synthesize) HDL source design into the binary bitstream,
+users can choose manufacturer's original (closed source) tool or open-source tools.
+
+Manufacturer's synthesis tool for Windows and Red Hat Linux is
+[Lattice Diamond](http://www.latticesemi.com/latticediamond).
+This project is helpful on how to convert Lattice diamond RPM package
+to [Lattice Diamond for Ubuntu](https://github.com/EnJens/lattice-diamond-3.10-ubuntu).
+
+FPGA Opensource Synthesis tools are available for ECP5. Fully functional
+and tested on ULX3S boards. This the famous triplet to be installed:
+[prjtrellis](https://github.com/SymbiFlow/prjtrellis)
+[nextpnr](https://github.com/YosysHQ/nextpnr),
+[yosys](https://github.com/YosysHQ/yosys).
+Detailed description on how to install is written in their READMEs.
+
 # Troubleshooting
 
 If you see some FAIL in DAC, make sure that you uploaded suitable
