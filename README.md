@@ -206,18 +206,18 @@ users can choose manufacturer's original (closed source) tool or open-source too
 
 Manufacturer's synthesis tool for Windows and Red Hat Linux is
 [Lattice Diamond](http://www.latticesemi.com/latticediamond).
-This project is helpful on how to convert Lattice diamond RPM package
+This project is helpful on how to convert Lattice Diamond RPM package
 to [Lattice Diamond for Ubuntu](https://github.com/EnJens/lattice-diamond-3.10-ubuntu).
 Here is also a set of [scripts to fix Diamond on Debian](/fpga/diamond),
 for a semi-automatic use, some system administration knowledge is required.
 
-FPGA Opensource Synthesis tools are available for ECP5. Fully functional
-and tested on ULX3S boards. A wonderful set of examples for ULX3S
-[fpga-odysseus](https://github.com/ulx3s/fpga-odysseus) has been presented at
-[Hackaton workshop at RADIONA](http://radiona.org/first-fpga-odysseus-hackathon).
-Includes a range of examples, from simplest to advanced. Precompiled
-opensource tools and "apio" system is used for easy multiplatform installation
-and compiling.
+FPGA opensource synthesis (FOSS) tools are available for ECP5.
+Fully functional and tested on ULX3S boards.
+A wonderful set of examples for ULX3S
+[fpga-odysseus](https://github.com/ulx3s/fpga-odysseus)
+includes a range of examples, from simplest to advanced.
+Precompiled opensource tools and "apio" system is used for
+easy multiplatform installation and compiling.
 
 To recompile the latest tools from source, the famous triplet is here:
 [prjtrellis](https://github.com/SymbiFlow/prjtrellis)
