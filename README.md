@@ -210,7 +210,14 @@ This project is helpful on how to convert Lattice diamond RPM package
 to [Lattice Diamond for Ubuntu](https://github.com/EnJens/lattice-diamond-3.10-ubuntu).
 
 FPGA Opensource Synthesis tools are available for ECP5. Fully functional
-and tested on ULX3S boards. This the famous triplet to be installed:
+and tested on ULX3S boards. A wonderful set of examples for ULX3S
+[fpga-odysseus](https://github.com/ulx3s/fpga-odysseus) has been presented at
+[Hackaton workshop at RADIONA](http://radiona.org/first-fpga-odysseus-hackathon).
+Includes a range of examples, from simplest to advanced. Precompiled
+opensource tools and "apio" system is used for easy multiplatform installation
+and compiling.
+
+To recompile the latest tools from source, the famous triplet is here:
 [prjtrellis](https://github.com/SymbiFlow/prjtrellis)
 [nextpnr](https://github.com/YosysHQ/nextpnr),
 [yosys](https://github.com/YosysHQ/yosys).
