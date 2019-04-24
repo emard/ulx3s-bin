@@ -2,9 +2,21 @@
 
 A collection of functional binary files and uploaders
 to quickstart with ULX3S. Works from Debian Linux.
+
 Connect USB PC port with micro-USB cable to US1 port of ULX3S.
 FT231X in factory default state should turn ON Green LED D18
 when connected to PC.
+
+If running linux, some udev rule is practical in order to allow non-root users
+(in given example, members of "dialout" group) access to the USB-serial JTAG:
+
+    # file: /etc/udev/rules.d/80-fpga-ulx3s.rules
+    # this is for usb-serial tty device
+    SUBSYSTEM=="tty", ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", \
+      MODE="664", GROUP="dialout"
+    # this is for ujprog libusb access
+    ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6015", \
+      GROUP="dialout", MODE="666"
 
 Set ftdi usbserial name
 
