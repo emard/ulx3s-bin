@@ -367,7 +367,6 @@ class ecp5:
     self.send_tms(1) # -> exit 2 DR
     self.send_tms(1) # -> update DR
     self.send_tms(1) # -> select DR scan
-    print("from 0x%06X erase %dK" % (addr, self.flash_erase_size>>10),end="\r")
     self.flash_wait_status()
 
   def flash_write_block(self, block, addr=0):
@@ -547,21 +546,30 @@ class ecp5:
     count_write = 0
     file_block = bytearray(self.flash_erase_size)
     flash_block = bytearray(self.flash_erase_size)
+    progress_char="."
     while filedata.readinto(file_block):
       retry = 3
       while retry >= 0:
         self.flash_fast_read_block(flash_block, addr=addr+bytes_uploaded)
         must = self.compare_flash_file_buf(flash_block,file_block)
+        write_addr = addr+bytes_uploaded
         if must == 0:
+          if (write_addr & 0xFFFF) == 0:
+            print("\r0x%06X %dK " % (write_addr, self.flash_erase_size>>10),end="")
+          else:
+            print(progress_char,end="")
+          progress_char="."
           count_total += 1
           bytes_uploaded += len(file_block)
           break
         retry -= 1
         if must & 1: # must_erase:
-          self.flash_erase_block(addr=addr+bytes_uploaded)
+          #print("from 0x%06X erase %dK" % (write_addr, self.flash_erase_size>>10),end="\r")
+          self.flash_erase_block(write_addr)
           count_erase += 1
+          progress_char = "e"
         if must & 2: # must_write:
-          write_addr = addr+bytes_uploaded
+          #print("from 0x%06X write %dK" % (write_addr, self.flash_erase_size>>10),end="\r")
           block_addr = 0
           next_block_addr = 0
           while next_block_addr < len(file_block):
@@ -570,12 +578,14 @@ class ecp5:
             write_addr += self.flash_write_size
             block_addr = next_block_addr
           count_write += 1
+          progress_char = "w"
         #if not verify:
         #  count_total += 1
         #  bytes_uploaded += len(file_block)
         #  break
       if retry < 0:
         break
+    print("\r",end="")
     self.stopwatch_stop(bytes_uploaded)
     print("%dK blocks: %d total, %d erased, %d written." % (self.flash_erase_size>>10, count_total, count_erase, count_write))
     self.flash_close()
