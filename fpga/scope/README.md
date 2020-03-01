@@ -1,6 +1,6 @@
 # Oscilloscope demo for ULX3S
 
-Here are demo binares compiled from hdl4fpga sources for ULX3S.
+Here are demo binaries compiled from hdl4fpga sources for ULX3S.
 Turns ULX3S into a 4-channel storage oscilloscope with GUI.
 It will show traces on 96x64 color OLED or 800x600 on digital monitor.
 
