@@ -1,6 +1,7 @@
 # USB HID demo
 
-Plug into US2 USB1.0 (low-speed) device like
+Plug into US2 or on side adapter US3, US4 some 
+USB1.0 (low-speed) device like
 mouse, keyboard, joystick.
 
 USB reports will be displayed as HEX numbers
