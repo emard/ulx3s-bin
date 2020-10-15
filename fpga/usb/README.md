@@ -8,9 +8,16 @@ on both DVI monitor and ST7789 LCD.
 
 Pressing keys should change HEX numbers.
 
-Programming examples:
+Programming examples
 
-   zcat ulx3s_12f_usbhost_test.bit.gz | fujprog
-   gzip -d ulx3s_12f_usbhost_test.bit.gz
-   fujprog ulx3s_12f_usbhost_test.bit
-   openFPGALoader --board ulx3s ulx3s_12f_usbhost_test.bit
+    zcat ulx3s_12f_usbhost_test.bit.gz | fujprog
+
+or
+
+    gunzip ulx3s_12f_usbhost_test.bit.gz
+    fujprog ulx3s_12f_usbhost_test.bit
+
+or
+
+    gunzip ulx3s_12f_usbhost_test.bit.gz
+    openFPGALoader --board ulx3s ulx3s_12f_usbhost_test.bit
