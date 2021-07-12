@@ -653,7 +653,7 @@ def peek(addr,length=1):
 def poke(addr,data):
   run.poke(addr,data)
 
-bitstream="/sd/hdl4fpga/bitstreams/ulx3s_12f_graphics_spi.bit"
+bitstream="/sd/slides-hdl4fpga/ulx3s_12f_graphics.bit"
 try:
   os.mount(SDCard(slot=3),"/sd")
   ecp5.prog(bitstream)
