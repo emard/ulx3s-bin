@@ -41,12 +41,12 @@ DFU should enumerate on US2 port:
     lsusb
     Bus 001 Device 117: ID 1d50:614b OpenMoko, Inc. ULX3S FPGA (DFU)
 
-On linux, it's practical to make udev rules that allows normal users
-members of "dialout" group to also run dfu-util, otherwise it should
-be run as root:
+On linux, it's practical to add a udev rule which allows normal users
+members of "dialout" group to also run dfu-util,
+otherwise it should be run as root:
 
     # file: /etc/udev/rules.d/80-fpga-dfu.rules
-    # this is for dfu 1d50:614b libusb access
+    # this is for DFU 1d50:614b libusb access
     ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="614b", \
     GROUP="dialout", MODE="666"
 
