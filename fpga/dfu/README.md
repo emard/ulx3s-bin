@@ -2,6 +2,8 @@
 
 This bootloader makes passthru at US1 port for ESP32 flashing
 and USB DFU at US2 port for FPGA flashing. DFU is very fast.
+Source is based on [HAD2019 badge bootloader](https://github.com/smunaut/had2019-playground)
+modified to [ULX3S bootloader](https://github.com/emard/had2019-playground)
 
 To install new bootloader for the first time (5 minutes flashing)
 choose bitstream for your board and:
