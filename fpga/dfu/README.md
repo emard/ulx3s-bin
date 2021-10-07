@@ -54,10 +54,6 @@ To upload and start user bitstream (fast, few seconds):
 
     dfu-util -a 0 -R -D blink.bit
 
-To upgrade bootloader (fast, few seconds)
-
-    dfu-util -a 5 -D bootloader.bit
-
 To list all flashing destinations for -a N
 
     dfu-util -l
