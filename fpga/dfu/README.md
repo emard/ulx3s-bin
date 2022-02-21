@@ -12,7 +12,7 @@ choose bitstream for your board and:
 
 or
 
-    openFPGALoader -b ulx3s --file-type bin -f multiboot.img
+    openFPGALoader -b ulx3s --unprotect-flash --file-type bin -f multiboot.img.gz
 
 To enter bootloader, hold BTN1 and plug US2
 In bootloader mode, LEDs 0-2 should be ON, other LEDs 3-7 OFF:
@@ -50,10 +50,27 @@ otherwise it should be run as root:
     ATTRS{idVendor}=="1d50", ATTRS{idProduct}=="614b", \
     GROUP="dialout", MODE="666"
 
-To upload and start user bitstream (fast, few seconds):
+To upload user bitstream with openFPGALoader, plug to US2 and
+hold BTN1 or set DIP SW1 ON.
+Bitstream can be gzip-compressed to save storage on PC,
+OpenFPGALoader will gunzip on-the-fly:
+
+    openFPGALoader -b ulx3s_dfu bitstream.bit.gz
+
+To upload and start user bitstream with "dfu-util" tool,
+we can use this
+
+    dfu-util -a 0 -D blink.bit
+    dfu-util -a 0 -e
+
+sometimes this one-liner will work too:
 
     dfu-util -a 0 -R -D blink.bit
 
 To list all flashing destinations for -a N
 
     dfu-util -l
+
+To upload DFU bootloader itself, hold BTN1 and BTN2, plug to US2:
+
+    dfu-util -a 5 -D multiboot.bit
