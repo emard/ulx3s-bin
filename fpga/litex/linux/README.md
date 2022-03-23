@@ -24,6 +24,8 @@ If ULX3S serial is on ttyUSB0 you can connect to serial with
 screen /dev/ttyUSB0 115200 
 ```
 
+BTI1 on ULX3S is set as reset so if you do not see anything starting press BT1 shortly
+
 You may need to add sudo if user is not member of dialout group
 
 Framebuffer on GPDI should show penguin
